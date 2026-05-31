@@ -13,7 +13,7 @@ My personal dotfiles for Hyprland on Fedora.
 
 ## Install
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+git clone https://github.com/ipsha-ghimire/dotfiles.git ~/dotfiles
 cd ~/dotfiles && stow .
 ```
 
