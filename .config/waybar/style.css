@@ -1,0 +1,88 @@
+* {
+    font-family: "Hack Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 30, 0.95);
+    color: #ebdbb2;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #a89984;
+    background: transparent;
+    font-weight: bold;
+}
+
+#workspaces button.active {
+    color: #fbf1c7;
+    border-bottom: 3px solid #d79921;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fbf1c7;
+}
+
+#clock {
+    color: #fbf1c7;
+    padding: 0 14px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#pulseaudio {
+    color: #fabd2f;
+    padding: 0 12px;
+    font-weight: bold;
+}
+
+#pulseaudio.muted {
+    color: #928374;
+}
+
+#network {
+    color: #b8bb26;
+    padding: 0 12px;
+    font-weight: bold;
+}
+
+#battery {
+    color: #b8bb26;
+    padding: 0 12px;
+    font-weight: bold;
+}
+
+#battery.warning {
+    color: #fabd2f;
+}
+
+#battery.critical {
+    color: #fb4934;
+}
+
+#battery.charging {
+    color: #b8bb26;
+}
+
+#tray {
+    padding: 0 12px;
+}
+
+#cpu {
+    color: #83a598;
+    padding: 0 12px;
+    font-weight: bold;
+}
+
+#memory {
+    color: #d3869b;
+    padding: 0 12px;
+    font-weight: bold;
+}
