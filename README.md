@@ -1,19 +1,24 @@
 # dotfiles
+
 My personal dotfiles for Hyprland on Fedora.
-Stack
 
-WM: Hyprland
-Bar: Waybar
-Launcher: Wofi
-Terminal: Kitty
-Shell: Zsh + Oh My Zsh + Starship
-Notifications: Mako
-Theme: Gruvbox Dark
+## Stack
+- **WM:** Hyprland
+- **Bar:** Waybar
+- **Launcher:** Wofi
+- **Terminal:** Kitty
+- **Shell:** Zsh + Oh My Zsh + Starship
+- **Notifications:** Mako
+- **Theme:** Gruvbox Dark
 
-Install
-bashgit clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+## Install
+```bash
+git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
 cd ~/dotfiles && stow .
-Structure
+```
+
+## Structure
+```
 .config/
 ├── hypr/      # Hyprland, hyprlock, hypridle, hyprpaper
 ├── waybar/    # Status bar
@@ -22,19 +27,64 @@ Structure
 ├── mako/      # Notifications
 ├── gtk-3.0/   # GTK theme
 └── gtk-4.0/   # GTK theme
-Keybindings
+```
 
-SUPER = Windows key
+## Keybindings
 
-Essential
-ShortcutActionSUPER + EnterTerminal (kitty)SUPER + DApp launcher (wofi)SUPER + QClose windowSUPER + FFullscreenSUPER + F1Lock screenSUPER + VFloat/unfloat windowSUPER + SHIFT + RReload Hyprland configSUPER + SHIFT + EExit Hyprland
-Apps
-ShortcutOpensSUPER + BChromeSUPER + SHIFT + BBraveSUPER + CVSCodeSUPER + SHIFT + DDiscordSUPER + EFile manager (Nautilus)SUPER + YYouTubeSUPER + SHIFT + CClaudeSUPER + SHIFT + GChatGPTSUPER + SHIFT + NNotion
-Window Management
-ShortcutActionSUPER + H/J/K/LFocus left/down/up/rightSUPER + SHIFT + H/J/K/LMove window left/down/up/rightSUPER + ALT + H/J/K/LResize window
-Workspaces
-ShortcutActionSUPER + 1-9Switch to workspaceSUPER + SHIFT + 1-9Move window to workspaceSUPER + TabNext workspaceSUPER + SHIFT + TabPrevious workspaceSUPER + ScrollCycle workspaces
-Screenshots
-ShortcutActionPrintFull screen → clipboardSUPER + SHIFT + SSelect region → annotate (satty)SUPER + PFull screen → clipboard (backup)
-Other
-ShortcutActionSUPER + SHIFT + VClipboard historySUPER + F2Focus laptop screenSUPER + F3Focus external monitorSUPER + ``  `` `Toggle scratchpad terminal
+> SUPER = Windows key
+
+### Essential
+| Shortcut | Action |
+|---|---|
+| `SUPER + Enter` | Terminal (kitty) |
+| `SUPER + D` | App launcher (wofi) |
+| `SUPER + Q` | Close window |
+| `SUPER + F` | Fullscreen |
+| `SUPER + F1` | Lock screen |
+| `SUPER + V` | Float/unfloat window |
+| `SUPER + SHIFT + R` | Reload Hyprland config |
+| `SUPER + SHIFT + E` | Exit Hyprland |
+
+### Apps
+| Shortcut | Opens |
+|---|---|
+| `SUPER + B` | Chrome |
+| `SUPER + SHIFT + B` | Brave |
+| `SUPER + C` | VSCode |
+| `SUPER + SHIFT + D` | Discord |
+| `SUPER + E` | File manager (Nautilus) |
+| `SUPER + Y` | YouTube |
+| `SUPER + SHIFT + C` | Claude |
+| `SUPER + SHIFT + G` | ChatGPT |
+| `SUPER + SHIFT + N` | Notion |
+
+### Window Management
+| Shortcut | Action |
+|---|---|
+| `SUPER + H/J/K/L` | Focus left/down/up/right |
+| `SUPER + SHIFT + H/J/K/L` | Move window left/down/up/right |
+| `SUPER + ALT + H/J/K/L` | Resize window |
+
+### Workspaces
+| Shortcut | Action |
+|---|---|
+| `SUPER + 1-9` | Switch to workspace |
+| `SUPER + SHIFT + 1-9` | Move window to workspace |
+| `SUPER + Tab` | Next workspace |
+| `SUPER + SHIFT + Tab` | Previous workspace |
+| `SUPER + Scroll` | Cycle workspaces |
+
+### Screenshots
+| Shortcut | Action |
+|---|---|
+| `Print` | Full screen → clipboard |
+| `SUPER + SHIFT + S` | Select region → annotate (satty) |
+| `SUPER + P` | Full screen → clipboard (backup) |
+
+### Other
+| Shortcut | Action |
+|---|---|
+| `SUPER + SHIFT + V` | Clipboard history |
+| `SUPER + F2` | Focus laptop screen |
+| `SUPER + F3` | Focus external monitor |
+| `SUPER + `` ` `` ` | Toggle scratchpad terminal |
