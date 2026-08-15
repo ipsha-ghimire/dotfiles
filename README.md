@@ -9,6 +9,8 @@ My personal dotfiles for Hyprland on Fedora.
 - **Terminal:** Kitty
 - **Shell:** Zsh + Oh My Zsh + Starship
 - **Notifications:** Mako
+- **Power menu:** Wlogout
+- **Screenshots:** Flameshot
 - **Theme:** Gruvbox Dark
 
 ## Install
@@ -25,6 +27,7 @@ cd ~/dotfiles && stow .
 ├── kitty/     # Terminal
 ├── wofi/      # App launcher
 ├── mako/      # Notifications
+├── wlogout/   # Power menu (layout + style)
 ├── gtk-3.0/   # GTK theme
 └── gtk-4.0/   # GTK theme
 ```
@@ -40,7 +43,7 @@ cd ~/dotfiles && stow .
 | `SUPER + D` | App launcher (wofi) |
 | `SUPER + Q` | Close window |
 | `SUPER + F` | Fullscreen |
-| `SUPER + F1` | Lock screen |
+| `SUPER + CTRL + L` | Lock screen (also `SUPER + SHIFT + Q`) |
 | `SUPER + V` | Float/unfloat window |
 | `SUPER + SHIFT + R` | Reload Hyprland config |
 | `SUPER + SHIFT + E` | Exit Hyprland |
@@ -52,7 +55,6 @@ cd ~/dotfiles && stow .
 | `SUPER + SHIFT + B` | Brave |
 | `SUPER + C` | VSCode |
 | `SUPER + SHIFT + D` | Discord |
-| `SUPER + E` | File manager (Nautilus) |
 | `SUPER + Y` | YouTube |
 | `SUPER + SHIFT + C` | Claude |
 | `SUPER + SHIFT + G` | ChatGPT |
@@ -68,23 +70,29 @@ cd ~/dotfiles && stow .
 ### Workspaces
 | Shortcut | Action |
 |---|---|
-| `SUPER + 1-9` | Switch to workspace |
-| `SUPER + SHIFT + 1-9` | Move window to workspace |
+| `SUPER + 1-4` | Switch to workspace |
+| `SUPER + SHIFT + 1-4` | Move window to workspace |
 | `SUPER + Tab` | Next workspace |
 | `SUPER + SHIFT + Tab` | Previous workspace |
 | `SUPER + Scroll` | Cycle workspaces |
+| 3-finger swipe | Cycle workspaces (touchpad gesture) |
 
-### Screenshots
+Workspaces 1-2 default to the laptop screen (`eDP-1`); 3-4 default to the external monitor (`HDMI-A-1`).
+
+### Screenshots & Recording
 | Shortcut | Action |
 |---|---|
 | `Print` | Full screen → clipboard |
-| `SUPER + SHIFT + S` | Select region → annotate (satty) |
+| `SUPER + SHIFT + S` | Select region → annotate (Flameshot) |
 | `SUPER + P` | Full screen → clipboard (backup) |
+| `F9` | Start screen recording (`~/record.sh`) |
+| `F10` | Stop screen recording |
 
 ### Other
 | Shortcut | Action |
 |---|---|
 | `SUPER + SHIFT + V` | Clipboard history |
-| `SUPER + F2` | Focus laptop screen |
-| `SUPER + F3` | Focus external monitor |
 | `SUPER + `` ` `` ` | Toggle scratchpad terminal |
+| `SUPER + SHIFT + `` ` `` ` | Move window to scratchpad |
+| Waybar → ⏻ | Power menu (Wlogout: lock/logout/suspend/reboot/shutdown) |
+| Waybar → SS | Take screenshot (Flameshot) |
