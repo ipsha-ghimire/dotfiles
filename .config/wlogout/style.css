@@ -1,0 +1,35 @@
+* {
+    background: none;
+    font-family: "Hack Nerd Font";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+window {
+    background-color: rgba(28, 28, 28, 0.92);
+}
+
+button {
+    background-color: rgba(60, 56, 54, 0.8);
+    border: 1px solid #458588;
+    border-radius: 12px;
+    color: #ebdbb2;
+    margin: 8px;
+    min-width: 80px;
+    min-height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: rgba(69, 133, 136, 0.3);
+    color: #fbf1c7;
+}
+
+#lock:hover { border-color: #458588; }
+#suspend:hover { border-color: #d79921; }
+#shutdown:hover { border-color: #cc241d; }
+#reboot:hover { border-color: #98971a; }
+#logout:hover { border-color: #b16286; }
+#hibernate:hover { border-color: #689d6a; }

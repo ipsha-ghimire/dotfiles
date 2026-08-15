@@ -6,8 +6,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "pulseaudio", "network", "battery", "tray"],
-
+"modules-right": ["cpu", "memory", "pulseaudio", "network", "battery", "tray","custom/screenshot", "custom/power"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -66,5 +65,16 @@
 
     "tray": {
         "spacing": 10
-    }
+    },
+    "custom/screenshot": {
+    "format": "SS",
+    "on-click": "flameshot",
+    "tooltip": true,
+    "tooltip-text": "Take Screenshot"
+},
+     "custom/power": {
+      "format": "⏻",
+       "on-click": "wlogout -l ~/.config/wlogout/layout -s ~/.config/wlogout/style.css",
+        "tooltip": false
+}
 }
