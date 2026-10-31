@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
-# Switch the external monitor (HDMI-A-1) between landscape and portrait.
-# Writes ~/.config/hypr/monitors.conf (sourced by hyprland.conf) and reloads Hyprland.
+# Rotate the home BenQ (SUPER+O). Saves the choice in ~/.config/hypr/monitors.conf
 # Usage: monitor-layout.sh landscape|portrait|toggle|init
 set -euo pipefail
 
 CONF="$HOME/.config/hypr/monitors.conf"
-EXT="HDMI-A-1"
+BENQ="BNQ BenQ GW2490T J3T0089701Q"
 
 write_conf() {
     local mode="$1" ext_line
     case "$mode" in
-        landscape) ext_line="monitor = $EXT, 1920x1080@60, 1920x840, 1, transform, 0" ;;
-        portrait)  ext_line="monitor = $EXT, 1920x1080@60, 1920x0, 1, transform, 3" ;;
+        landscape) ext_line="monitor = desc:$BENQ, 1920x1080@60, 1920x840, 1, transform, 0" ;;
+        portrait)  ext_line="monitor = desc:$BENQ, 1920x1080@60, 1920x0, 1, transform, 3" ;;
         *) echo "unknown mode: $mode" >&2; exit 1 ;;
     esac
     cat > "$CONF" <<CONF
@@ -22,15 +21,16 @@ $ext_line
 CONF
 }
 
+# Prints the BenQ's transform, or nothing if it isn't connected
 current_transform() {
     local json
     json="$(hyprctl monitors -j)"
     if command -v jq >/dev/null 2>&1; then
-        jq -r --arg n "$EXT" '.[] | select(.name == $n) | .transform' <<<"$json"
+        jq -r --arg d "$BENQ" '.[] | select(.description == $d) | .transform' <<<"$json"
     else
-        # Fallback: drop everything up to HDMI-A-1's name, take the first "transform" after it
-        tr -d '\n' <<<"$json" | sed -n "s/.*\"name\": *\"$EXT\"//p" \
-            | grep -o '"transform": *[0-9]*' | head -n1 | grep -o '[0-9]*$'
+        # No jq: find the BenQ's "transform" value by hand
+        tr -d '\n' <<<"$json" | sed -n "s/.*\"description\": *\"$BENQ\"//p" \
+            | grep -o '"transform": *[0-9]*' | head -n1 | grep -o '[0-9]*$' || true
     fi
 }
 
@@ -44,7 +44,12 @@ apply() {
 case "${1:-}" in
     landscape|portrait) apply "$1" ;;
     toggle)
-        if [[ "$(current_transform)" == "0" ]]; then apply portrait; else apply landscape; fi
+        t="$(current_transform)"
+        if [[ -z "$t" ]]; then
+            notify-send "Monitor" "BenQ not connected" || true
+            exit 0
+        fi
+        if [[ "$t" == "0" ]]; then apply portrait; else apply landscape; fi
         ;;
     init) [[ -f "$CONF" ]] || write_conf landscape ;;
     *) echo "usage: $(basename "$0") landscape|portrait|toggle|init" >&2; exit 1 ;;

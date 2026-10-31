@@ -97,7 +97,7 @@ If a target folder already exists, move it aside first (e.g. `mv ~/.config/hypr 
 | `SUPER + Scroll`      | Cycle workspaces                    |
 | 3-finger swipe          | Cycle workspaces (touchpad gesture) |
 
-The external BenQ (`HDMI-A-1`) sits to the right of the laptop screen (`eDP-1`), bottom-aligned. Workspaces 1-2 default to the laptop screen; 3-4 default to the BenQ.
+The external BenQ (matched by its name, so other monitors on the HDMI port keep an automatic layout) sits to the right of the laptop screen (`eDP-1`), bottom-aligned. Workspaces 1-2 default to the laptop screen; 3-4 default to the BenQ.
 
 ### Screenshots & Recording
 
