@@ -99,6 +99,8 @@ If a target folder already exists, move it aside first (e.g. `mv ~/.config/hypr 
 
 The external BenQ (matched by its name, so other monitors on the HDMI port keep an automatic layout) sits to the right of the laptop screen (`eDP-1`), bottom-aligned. Workspaces 1-2 default to the laptop screen; 3-4 default to the BenQ.
 
+The office Dell S2421HN sits above the laptop, shifted left (move the pointer up from the laptop's left half).
+
 ### Screenshots & Recording
 
 | Shortcut              | Action                                   |
