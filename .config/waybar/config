@@ -68,9 +68,9 @@
     },
     "custom/screenshot": {
     "format": "SS",
-    "on-click": "flameshot",
+    "on-click": "~/.config/hypr/scripts/screenshot.sh",
     "tooltip": true,
-    "tooltip-text": "Take Screenshot"
+    "tooltip-text": "Screenshot (Satty / Flameshot)"
 },
      "custom/power": {
       "format": "⏻",
